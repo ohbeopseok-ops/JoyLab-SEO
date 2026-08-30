@@ -9,6 +9,28 @@ JoyLab-SEO is a GitHub-ready workspace for SEO research, content production, aut
 - Make ChatGPT/Codex edits easy to review and verify.
 - Prefer evidence-based changes over ad-hoc edits.
 
+## Content OS V1.6
+
+JoyLab Content OS V1.6 is being built as a data-driven content growth layer inside this repository.
+
+The first implementation milestone is the Supabase/Postgres Database Foundation:
+
+- 10 core tables for content, search demand, actual performance, scoring, reviews, executive actions, winner patterns, and weight certification.
+- Row Level Security enabled on every V1.6 public table.
+- An idempotent seed generated from the 62-row JoyLab Content Registry V1.5.
+- PostgreSQL 17 CI that applies the migration and seed, runs smoke assertions, and re-runs the seed to verify idempotency.
+
+See `docs/CONTENT_OS_V1.6_DATABASE.md`.
+
+### V1.6 delivery sequence
+
+1. Database Foundation + 62-row seed.
+2. NAVER API HUB Search Demand Collector.
+3. Search Demand feature engine.
+4. Google Search Console Actual Performance collector.
+5. Opportunity / ROI / Executive Queue.
+6. Vercel Control Tower dashboard.
+
 ## Standard Structure
 
 ```text
@@ -19,7 +41,8 @@ JoyLab-SEO/
 ├─ docs/
 ├─ src/
 ├─ tests/
-└─ scripts/
+├─ scripts/
+└─ supabase/
 ```
 
 ## GitHub Save Workflow
@@ -47,3 +70,4 @@ A save is considered complete only when:
 ## Status
 
 Initialized as a GitHub-ready JoyLab repository on 2026-08-23.
+Content OS V1.6 Database Foundation is under active implementation.
