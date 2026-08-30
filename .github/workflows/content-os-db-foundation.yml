@@ -1,0 +1,47 @@
+name: Content OS DB Foundation
+
+on:
+  pull_request:
+    paths:
+      - "supabase/**"
+      - ".github/workflows/content-os-db-foundation.yml"
+  workflow_dispatch:
+
+jobs:
+  postgres-smoke:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: joylab_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d joylab_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    env:
+      PGPASSWORD: postgres
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Apply foundation migration
+        run: psql -h localhost -U postgres -d joylab_test -v ON_ERROR_STOP=1 -f supabase/migrations/001_content_os_v16_foundation.sql
+
+      - name: Apply 62-row seed
+        run: psql -h localhost -U postgres -d joylab_test -v ON_ERROR_STOP=1 -f supabase/seed/002_seed_content_registry.sql
+
+      - name: Run smoke assertions
+        run: psql -h localhost -U postgres -d joylab_test -v ON_ERROR_STOP=1 -f supabase/tests/001_foundation_smoke.sql
+
+      - name: Re-run seed for idempotency
+        run: |
+          psql -h localhost -U postgres -d joylab_test -v ON_ERROR_STOP=1 -f supabase/seed/002_seed_content_registry.sql
+          test "$(psql -h localhost -U postgres -d joylab_test -Atc 'select count(*) from public.contents')" = "62"
+          test "$(psql -h localhost -U postgres -d joylab_test -Atc 'select count(*) from public.keywords')" = "62"
