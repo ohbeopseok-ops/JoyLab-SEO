@@ -1,0 +1,4 @@
+content_id,url,page_type,parent_hub,primary_entity,primary_intent,published_at,baseline_at,d7_check_at,d14_measure_at,d30_decision_at,google_indexed,naver_indexed,impressions,clicks,ctr,target_query_match_rate,internal_links_in,internal_links_out,ai_citation_observed,gold_status,decision
+BOOK-EP01,/books/the-old-man-and-the-sea/,BOOK,Books,Growth & Leadership,노인과 바다 리더십,2026-09-20,2026-09-20,2026-09-27,2026-10-04,2026-10-20,true,true,96,7,7.29,68,6,8,true,GOLD,expand
+RES-AI-001,/research/ai-economics/capex-to-eps/,RESEARCH,AI Economics,Investment & Economics,AI CAPEX가 매출·EPS에 미치는 영향,2026-09-21,2026-09-21,2026-09-28,2026-10-05,2026-10-21,true,unknown,182,11,6.04,74,5,10,true,GOLD,expand
+LEAD-PLAY-001,/growth-leadership/playbook/low-performance-coaching/,LEADERSHIP,Growth & Leadership,Growth & Leadership,성과부진 상담사 코칭,2026-09-21,2026-09-21,2026-09-28,2026-10-05,2026-10-21,true,true,41,3,7.32,83,7,6,false,GOLD,keep
