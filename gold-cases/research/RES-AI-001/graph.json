@@ -1,0 +1,21 @@
+{
+  "nodes":[
+    {"id":"HUB-AI-ECON","type":"HUB","title":"AI Economics","href":"/research/ai-economics/"},
+    {"id":"RES-AI-001","type":"RESEARCH","title":"AI CAPEX → Revenue → EPS → ROIC → Price","href":"/research/ai-economics/capex-to-eps/"},
+    {"id":"FRAME-CAPEX-001","type":"FRAMEWORK","title":"CAPEX → Revenue → EPS → ROIC → Price Framework","href":"/research/frameworks/capex-revenue-eps-roic-price/"},
+    {"id":"RES-HBM-001","type":"RESEARCH","title":"HBM 공급과 수익성","href":"/research/semiconductor/hbm-profitability/"},
+    {"id":"RES-POWER-001","type":"RESEARCH","title":"AI 데이터센터 전력 인프라","href":"/research/ai-infrastructure/power-grid/"},
+    {"id":"EVID-CAPEX-001","type":"EVIDENCE","title":"기업 CAPEX 공시/가이던스","href":null},
+    {"id":"EVID-REV-001","type":"EVIDENCE","title":"AI 관련 매출/수주 데이터","href":null},
+    {"id":"EVID-MARGIN-001","type":"EVIDENCE","title":"마진·현금흐름·ROIC 데이터","href":null}
+  ],
+  "edges":[
+    {"from":"RES-AI-001","to":"HUB-AI-ECON","type":"belongs_to"},
+    {"from":"EVID-CAPEX-001","to":"RES-AI-001","type":"supports"},
+    {"from":"EVID-REV-001","to":"RES-AI-001","type":"supports"},
+    {"from":"EVID-MARGIN-001","to":"RES-AI-001","type":"supports"},
+    {"from":"RES-AI-001","to":"FRAME-CAPEX-001","type":"explains"},
+    {"from":"RES-AI-001","to":"RES-HBM-001","type":"related_to"},
+    {"from":"RES-AI-001","to":"RES-POWER-001","type":"related_to"}
+  ]
+}

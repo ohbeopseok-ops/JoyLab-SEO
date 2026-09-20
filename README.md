@@ -1,49 +1,70 @@
 # JoyLab-SEO
 
-JoyLab-SEO is a GitHub-ready workspace for SEO research, content production, automation, and repeatable publishing workflows.
+JoyLab-SEO is the operating workspace for JoyLab search visibility, AI citation readiness, knowledge-graph architecture, and repeatable measurement.
 
-## Repository Goals
+## V1 Operating Model
 
-- Turn SEO ideas into reproducible workflows.
-- Keep prompts, source files, code, tests, and documentation together.
-- Make ChatGPT/Codex edits easy to review and verify.
-- Prefer evidence-based changes over ad-hoc edits.
+```text
+Content
+→ Knowledge Graph
+→ KnowledgeBridge
+→ SEO GOLD GATE
+→ Deploy
+→ Production Crawler Proof
+→ D0 Baseline
+→ D+7 Index Check
+→ D+14 Measurement
+→ D+30 Decision
+→ GOLD CASE
+```
 
-## Standard Structure
+## Repository Structure
 
 ```text
 JoyLab-SEO/
 ├─ README.md
 ├─ AGENTS.md
-├─ .gitignore
 ├─ docs/
-├─ src/
-├─ tests/
-└─ scripts/
+│  ├─ JOYLAB_SEO_GOLD_GATE_V1.md
+│  ├─ JOYLAB_SEO_MEASUREMENT_MANIFEST_V1.md
+│  ├─ JOYLAB_KNOWLEDGE_GRAPH_V1.md
+│  └─ JOYLAB_DETAIL_KNOWLEDGE_COMPONENT_V1.md
+├─ schemas/
+│  └─ joylab-seo-measurement-schema-v1.json
+├─ examples/
+│  └─ joylab-seo-measurement-example-v1.csv
+├─ src/components/knowledge/
+│  ├─ KnowledgeBridge.tsx
+│  ├─ KnowledgeBridgeV22.tsx
+│  └─ knowledge-bridge.types.ts
+└─ gold-cases/
+   ├─ books/BOOK-EP01/
+   └─ research/RES-AI-001/
 ```
 
-## GitHub Save Workflow
+## Core Rules
 
-When the user says **"깃헙에 저장해줘"** and the target repository is clear, use this workflow:
+- Published is not Done.
+- Unverified production evidence is VERIFY, never PASS.
+- Any BLOCKER failure prevents GOLD.
+- Every detail page should connect to a parent hub, related nodes, and a next action.
+- Measurement is D0 → D+7 → D+14 → D+30.
+- SEO is the distribution/verification layer; the Knowledge Graph is the accumulating asset.
 
-1. Inspect the target repository and current branch.
-2. Create or update the requested files.
-3. Include/update README and AGENTS when the project structure or operating rules materially change.
-4. Add or update tests when executable logic changes and tests are feasible.
-5. Commit with a descriptive message.
-6. Re-fetch the saved files and verify the expected content.
-7. Report repository, branch, changed files, commit SHA, and verification result.
+## GOLD CASES
 
-If the target repository is ambiguous, resolve the destination before writing.
+### BOOK-EP01
+『노인과 바다』 → GRIT Framework → Coaching Playbook → Case → Measurement
+
+### RES-AI-001
+AI CAPEX → Revenue → EPS → ROIC → Price with primary-evidence requirements.
 
 ## Verification Standard
 
-A save is considered complete only when:
+A save is complete only when:
+1. GitHub write succeeds.
+2. The written file is re-fetched.
+3. Content matches the intended change.
+4. Executable logic is tested when feasible.
 
-- GitHub write succeeds.
-- The saved file can be fetched again.
-- The fetched content matches the intended change.
-
-## Status
-
-Initialized as a GitHub-ready JoyLab repository on 2026-08-23.
+Initialized 2026-08-23. SEO GOLD V1 introduced 2026-09-21.
