@@ -1,0 +1,18 @@
+{
+  "nodes":[
+    {"id":"HUB-BOOKS","type":"HUB","title":"Books","href":"/books/"},
+    {"id":"BOOK-EP01","type":"BOOK","title":"성과가 무너졌을 때 사람이 보인다｜『노인과 바다』에서 배우는 리더십","href":"/books/the-old-man-and-the-sea/"},
+    {"id":"FRAME-GRIT-001","type":"FRAMEWORK","title":"GRIT Leadership Framework","href":"/growth-leadership/frameworks/grit-leadership/"},
+    {"id":"LEAD-PLAY-001","type":"PLAYBOOK","title":"성과부진 상담사 Coaching Playbook","href":"/growth-leadership/playbook/low-performance-coaching/"},
+    {"id":"CASE-COACH-001","type":"CASE","title":"성과 회복 코칭 적용 사례","href":"/growth-leadership/cases/performance-recovery-coaching/"},
+    {"id":"BOOK-SOURCE-HEMINGWAY-001","type":"EVIDENCE","title":"『노인과 바다』 원전","href":null}
+  ],
+  "edges":[
+    {"from":"BOOK-EP01","to":"HUB-BOOKS","type":"belongs_to"},
+    {"from":"BOOK-EP01","to":"BOOK-SOURCE-HEMINGWAY-001","type":"derived_from"},
+    {"from":"BOOK-EP01","to":"FRAME-GRIT-001","type":"explains"},
+    {"from":"FRAME-GRIT-001","to":"LEAD-PLAY-001","type":"applies_to"},
+    {"from":"LEAD-PLAY-001","to":"CASE-COACH-001","type":"applies_to"},
+    {"from":"CASE-COACH-001","to":"BOOK-EP01","type":"related_to"}
+  ]
+}
